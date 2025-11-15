@@ -1,0 +1,74 @@
+<!-- ======================= about.html ======================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Hassan — About</title>
+  <meta name="description" content="Ali Hassan — About page with smooth, premium animations and clean interface." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="aboutme.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">AliH.</a>
+      <nav>
+        <a href="work.html">Work</a>
+        <a href="about.html" class="active">About</a>
+        <a href="index.html#contact" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="hero-inner">
+        <h1>About Me</h1>
+        <p>I am Ali Hassan, a computer science student and UI/UX designer focused on creating smooth, premium digital experiences.</p>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="content-inner">
+        <h2>My Journey</h2>
+        <p>I specialize in frontend development, UI design, and creating animations that make interfaces feel alive. I enjoy building systems that are both visually striking and highly functional.</p>
+
+        <h2>Skills & Expertise</h2>
+        <ul class="skills">
+          <li>UI/Frontend Development (React, HTML, CSS)</li>
+          <li>Motion & Micro-interactions</li>
+          <li>Design Systems & Accessibility</li>
+          <li>Responsive & Interactive Layouts</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-preview">
+      <h2>Interested in collaborating?</h2>
+      <p>Let's work together on your next project.</p>
+      <a class="btn" href="index.html#contact">Get in Touch</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <p>© <span id="year"></span> Ali Hassan — Crafted with care.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('inview'); });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.content-inner').forEach(el => io.observe(el));
+    }
+  </script>
+</body>
+</html>
+

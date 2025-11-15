@@ -1,0 +1,45 @@
+:root{
+  --bg:#0f1115;
+  --card:#0e1114;
+  --muted:#9aa4b2;
+  --accent:#6ee7b7;
+  --glass: rgba(255,255,255,0.04);
+  --radius:18px;
+  --smooth: cubic-bezier(0.65,0,0.35,1);
+}
+
+body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#e9eef5;background:var(--bg);line-height:1.45}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none;transition:color 0.4s var(--smooth)}
+
+.nav{position:sticky;top:0;backdrop-filter: blur(12px);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);z-index:40;border-bottom:1px solid rgba(255,255,255,0.02);transition:background 0.6s var(--smooth)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Playfair Display', serif;font-weight:800;font-size:20px}
+.nav a{margin-left:22px;color:var(--muted);opacity:0.95;transition:color 0.4s var(--smooth)}
+.nav a.cta{padding:8px 14px;border-radius:12px;background:linear-gradient(90deg, rgba(110,231,183,0.12), rgba(110,231,183,0.06));color:var(--accent);font-weight:600}
+.nav a.active{color:var(--accent)}
+
+.work-hero{padding:88px 20px;text-align:center}
+.work-hero h1{font-family:'Playfair Display', serif;font-size:48px;margin-bottom:12px}
+.work-hero p{color:var(--muted);font-size:18px}
+
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:1200px;margin:60px auto;padding:0 20px}
+.work-item{background:var(--card);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transform:translateY(22px);opacity:0;transition:all 0.8s var(--smooth);box-shadow:0 20px 50px rgba(3,6,10,0.4)}
+.work-item.inview{transform:translateY(0);opacity:1}
+.work-thumb{height:200px;background:linear-gradient(135deg,#121416 0%, #13151a 100%);transition:transform 0.8s var(--smooth)}
+.work-item:hover .work-thumb{transform:scale(1.03)}
+.work-info{padding:18px}
+.work-info h2{margin:0 0 10px}
+.work-info p{color:var(--muted);margin:0 0 14px}
+.project-link{font-weight:600;color:var(--accent);transition:color 0.6s var(--smooth)}
+.project-link:hover{color:#3bdc9c}
+
+.contact-preview{padding:60px 20px;text-align:center}
+.contact-preview h2{font-family:'Playfair Display', serif;font-size:32px;margin-bottom:10px}
+.contact-preview p{color:var(--muted);margin-bottom:20px}
+.contact-preview .btn{padding:12px 20px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#41c18a);color:#041014;font-weight:700;transition:transform 0.5s var(--smooth)}
+.contact-preview .btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 20px 60px rgba(110,231,183,0.35)}
+
+.footer{padding:24px 20px;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
+
+@media (max-width:1024px){.work-grid{grid-template-columns:1fr}}

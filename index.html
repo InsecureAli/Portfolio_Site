@@ -1,0 +1,221 @@
+<!--
+File 1: index.html
+Save as: index.html
+
+File 2: styles.css
+Save as: styles.css
+
+Open index.html in a browser. Small inline script used for lightweight interactivity (no build tools required).
+-->
+
+<!-- ======================= index.html ======================= -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ali Hassan — Portfolio</title>
+    <meta name="description" content="Ali Hassan — Product & UI-focused portfolio with smooth, premium animations." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <header class="nav">
+        <div class="nav-inner">
+            <a class="brand" href="#">AliH.</a>
+            <nav>
+                <a href="./work.html">Work</a>
+                <a href="./aboutme.html">About</a>
+                <a href="#contact" class="cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home" aria-label="Introduction">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>Bringing ideas to life through modern full-stack development <span class="accent">alive</span>.
+                    </h1>
+                    <p class="lead">I'm Ali Hassan — a Full-stack developer building smooth, scalable web apps from
+                        front to back. </p>
+                    <p class="hero-links">
+                        <a class="btn" href="./work.html">See my work</a>
+                        <a class="link" href="./aboutme.html">More about me</a>
+                    </p>
+                </div>
+
+                <div class="hero-media" aria-hidden="true">
+                    <div class="device">
+                        <div class="screen" id="tilt-card">
+                            <!-- Lightweight decorative layout inside screen -->
+                            <div class="mockup">
+                                <div class="mockup-top"></div>
+                                <div class="mockup-body">
+                                    <div class="mockup-panel"></div>
+                                    <div class="mockup-panel small"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glow"></div>
+                    </div>
+                </div>
+            </div>
+            <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"></path>
+            </svg>
+        </section>
+
+        <section id="work" class="section-grid">
+            <div class="section-head">
+                <h2>Selected Work</h2>
+                <p>Case studies focused on motion, interaction and refined UI systems.</p>
+            </div>
+
+            <div class="projects">
+                <!-- Project card 1 -->
+                <article class="project" tabindex="0">
+                    <div class="project-media" aria-hidden="true">
+                        <div class="thumb"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Product Analytics Dashboard</h3>
+                        <p>Dashboard UI with micro-interactions and layered animations for fast comprehension.</p>
+                        <a class="project-link" href="#">View case study →</a>
+                    </div>
+                </article>
+
+                <!-- Project card 2 -->
+                <article class="project" tabindex="0">
+                    <div class="project-media">
+                        <div class="thumb"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mobile Shopping Experience</h3>
+                        <p>Motion-led onboarding that feels tactile and intuitive across gestures.</p>
+                        <a class="project-link" href="#">View case study →</a>
+                    </div>
+                </article>
+
+                <!-- Project card 3 -->
+                <article class="project" tabindex="0">
+                    <div class="project-media">
+                        <div class="thumb"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Creative Studio Site</h3>
+                        <p>Bold photography with subtle scroll-driven parallax reveal animations.</p>
+                        <a class="project-link" href="#">View case study →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="about section-bleed">
+            <div class="about-inner">
+                <h2>About me</h2>
+                <p>I am a Computer Science student specializing in designing intuitive interfaces that combine
+                    simplicity with engaging motion. I focus on creating scalable design systems, implementing
+                    accessible animations, and delivering high-performance front-end solutions.
+                </p>
+                <ul class="skills">
+                    <li>UI/Frontend (React, HTML, CSS)</li>
+                    <li>Motion & Micro-interactions</li>
+                    <li>Design Systems</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-inner">
+                <h2>Let's build something</h2>
+                <p>Open for freelance & collaboration.</p>
+
+                <!-- Contact Form -->
+                <form id="contact-form" class="contact-form">
+                    <input type="email" name="user_email" placeholder="your@email.com" required aria-label="Your email">
+                    <textarea name="message" placeholder="Tell me about your project" rows="4"
+                        aria-label="Message"></textarea>
+                    <button class="btn" type="submit">Send message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Load EmailJS once -->
+        <!-- Load EmailJS once -->
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+        <script>
+            // Initialize EmailJS correctly
+            emailjs.init("ckGHE3HIpSb0BVmmv"); 
+        </script>
+
+        <script>
+            // Form submit handler
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                emailjs.sendForm("service_il9baxo", "template_r6yaqgc", this)
+                    .then(function () {
+                        alert('Message sent successfully!');
+                        document.getElementById('contact-form').reset();
+                    }, function (error) {
+                        console.error('FAILED...', error);
+                        alert('Oops! Something went wrong.');
+                    });
+            });
+        </script>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="foot-inner">
+            <p>© <span id="year"></span> Ali Hassan — Crafted with care.</p>
+            <nav>
+                <a target="_blank" href="https://www.linkedin.com/in/ali-hassan-b3a41b320">LinkedIn</a>
+                <a target="_blank" href="https://github.com/InsecureAli">GitHub</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // small UX niceties: year + 3D tilt + prefers-reduced-motion fallback
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const card = document.getElementById('tilt-card');
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReduced && card) {
+            card.addEventListener('pointermove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                const rx = (y * -10).toFixed(2);
+                const ry = (x * 14).toFixed(2);
+                card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
+            });
+            card.addEventListener('pointerleave', () => card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)');
+        }
+
+        // Intersection observer for subtle reveal on scroll
+        if (!prefersReduced) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('inview');
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.project, .about-inner, .section-head').forEach(el => io.observe(el));
+        }
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

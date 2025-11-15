@@ -1,0 +1,98 @@
+<!-- ======================= work.html ======================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Hassan — Work</title>
+  <meta name="description" content="Ali Hassan — Detailed work showcase with smooth, premium animations." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="work.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">AliH.</a>
+      <nav>
+        <a href="work.html" class="active">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="work-hero">
+      <div class="hero-inner">
+        <h1>Selected Projects</h1>
+        <p>A detailed view of my work focusing on interface design, animations, and user experience.</p>
+      </div>
+    </section>
+
+    <section class="work-grid">
+      <article class="work-item" tabindex="0">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <h2>Analytics Dashboard</h2>
+          <p>Interactive dashboard UI with real-time data and smooth transitions.</p>
+          <a href="#" class="project-link">View Project →</a>
+        </div>
+      </article>
+
+      <article class="work-item" tabindex="0">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <h2>Mobile Shopping App</h2>
+          <p>Motion-led onboarding and micro-interactions for intuitive experience.</p>
+          <a href="#" class="project-link">View Project →</a>
+        </div>
+      </article>
+
+      <article class="work-item" tabindex="0">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <h2>Creative Studio Website</h2>
+          <p>Parallax scrolling and subtle animations to showcase visuals elegantly.</p>
+          <a href="#" class="project-link">View Project →</a>
+        </div>
+      </article>
+
+      <article class="work-item" tabindex="0">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <h2>Portfolio Redesign</h2>
+          <p>Modern personal portfolio with fluid motion and high-end interface.</p>
+          <a href="#" class="project-link">View Project →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact-preview">
+      <h2>Interested in collaborating?</h2>
+      <p>Let's work together on your next project.</p>
+      <a class="btn" href="index.html#contact">Get in Touch</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <p>© <span id="year"></span> Ali Hassan — Crafted with care.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('inview'); });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.work-item').forEach(el => io.observe(el));
+    }
+  </script>
+</body>
+</html>
+
+
