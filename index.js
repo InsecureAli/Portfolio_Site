@@ -32,3 +32,29 @@ if (!prefersReduced) {
 
   document.querySelectorAll('.project, .about-inner, .section-head').forEach(el => io.observe(el));
 }
+
+
+<script>
+document.getElementById("add-project").addEventListener("click", () => {
+
+    const container = document.querySelector(".projects");
+
+    const card = document.createElement("article");
+    card.className = "project";
+    card.tabIndex = 0;
+
+    card.innerHTML = `
+        <div class="project-media"><div class="thumb"></div></div>
+        <div class="project-info">
+            <h3>New Project</h3>
+            <p>Added dynamically from the + button.</p>
+            <a class="project-link" href="#">View case study →</a>
+        </div>
+    `;
+
+    container.appendChild(card);
+
+    // Re-run reveal animation
+    card.classList.add('inview');
+});
+</script>

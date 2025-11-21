@@ -51,21 +51,12 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                     </p>
                 </div>
 
-                <div class="hero-media" aria-hidden="true">
-                    <div class="device">
-                        <div class="screen" id="tilt-card">
-                            <!-- Lightweight decorative layout inside screen -->
-                            <div class="mockup">
-                                <div class="mockup-top"></div>
-                                <div class="mockup-body">
-                                    <div class="mockup-panel"></div>
-                                    <div class="mockup-panel small"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="glow"></div>
+                <div class="hero-media">
+                    <div class="photo-tile" id="photo-tilt">
+                        <img src="./portrait/my photo.png" alt="Ali Hassan">
                     </div>
                 </div>
+
             </div>
             <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
                 <path d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"></path>
@@ -115,7 +106,12 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                     </div>
                 </article>
             </div>
+<button id="add-project" class="add-project-btn">+ Add Project</button>
+
+
         </section>
+
+        
 
         <section id="about" class="about section-bleed">
             <div class="about-inner">
@@ -216,6 +212,36 @@ Open index.html in a browser. Small inline script used for lightweight interacti
     </script>
     <script src="script.js"></script>
 
+
+    <!-- js -->
+<script>
+document.getElementById("add-project").addEventListener("click", () => {
+
+    const container = document.querySelector(".projects");
+
+    const card = document.createElement("article");
+    card.className = "project";
+    card.tabIndex = 0;
+
+    card.innerHTML = `
+        <div class="project-media"><div class="thumb"></div></div>
+        <div class="project-info">
+            <h3>New Project</h3>
+            <p>Added dynamically from the + button.</p>
+            <a class="project-link" href="#">View case study →</a>
+        </div>
+    `;
+
+    container.appendChild(card);
+
+    // Re-run reveal animation
+    card.classList.add('inview');
+});
+</script>
+<!-- ---------- -->
+
+    
 </body>
+
 
 </html>
