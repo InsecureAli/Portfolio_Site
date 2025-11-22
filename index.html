@@ -106,12 +106,12 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                     </div>
                 </article>
             </div>
-<button id="add-project" class="add-project-btn">+ Add Project</button>
+            <button id="add-project" class="add-project-btn">+ Add Project</button>
 
 
         </section>
 
-        
+
 
         <section id="about" class="about section-bleed">
             <div class="about-inner">
@@ -143,7 +143,6 @@ Open index.html in a browser. Small inline script used for lightweight interacti
             </div>
         </section>
 
-        <!-- Load EmailJS once -->
         <!-- Load EmailJS once -->
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
@@ -214,16 +213,16 @@ Open index.html in a browser. Small inline script used for lightweight interacti
 
 
     <!-- js -->
-<script>
-document.getElementById("add-project").addEventListener("click", () => {
+    <script>
+        document.getElementById("add-project").addEventListener("click", () => {
 
-    const container = document.querySelector(".projects");
+            const container = document.querySelector(".projects");
 
-    const card = document.createElement("article");
-    card.className = "project";
-    card.tabIndex = 0;
+            const card = document.createElement("article");
+            card.className = "project";
+            card.tabIndex = 0;
 
-    card.innerHTML = `
+            card.innerHTML = `
         <div class="project-media"><div class="thumb"></div></div>
         <div class="project-info">
             <h3>New Project</h3>
@@ -232,15 +231,15 @@ document.getElementById("add-project").addEventListener("click", () => {
         </div>
     `;
 
-    container.appendChild(card);
+            container.appendChild(card);
 
-    // Re-run reveal animation
-    card.classList.add('inview');
-});
-</script>
-<!-- ---------- -->
+            // Re-run reveal animation
+            card.classList.add('inview');
+        });
+    </script>
+    <!-- ---------- -->
 
-    
+
 </body>
 
 
