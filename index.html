@@ -1,14 +1,3 @@
-<!--
-File 1: index.html
-Save as: index.html
-
-File 2: styles.css
-Save as: styles.css
-
-Open index.html in a browser. Small inline script used for lightweight interactivity (no build tools required).
--->
-
-<!-- ======================= index.html ======================= -->
 <!doctype html>
 <html lang="en">
 
@@ -18,14 +7,12 @@ Open index.html in a browser. Small inline script used for lightweight interacti
     <title>Ali Hassan — Portfolio</title>
     <meta name="description" content="Ali Hassan — Product & UI-focused portfolio with smooth, premium animations." />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
 </head>
 
 <body>
-    <script src="script.js"></script>
     <header class="nav">
         <div class="nav-inner">
             <a class="brand" href="#">AliH.</a>
@@ -41,10 +28,8 @@ Open index.html in a browser. Small inline script used for lightweight interacti
         <section class="hero" id="home" aria-label="Introduction">
             <div class="hero-grid">
                 <div class="hero-text">
-                    <h1>Bringing ideas to life through modern full-stack development <span class="accent">alive</span>.
-                    </h1>
-                    <p class="lead">I'm Ali Hassan — a Full-stack developer building smooth, scalable web apps from
-                        front to back. </p>
+                    <h1>Bringing ideas to life through modern full-stack development <span class="accent">alive</span>.</h1>
+                    <p class="lead">I'm Ali Hassan — a Full-stack developer building smooth, scalable web apps from front to back.</p>
                     <p class="hero-links">
                         <a class="btn" href="./work.html">See my work</a>
                         <a class="link" href="./aboutme.html">More about me</a>
@@ -52,11 +37,10 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                 </div>
 
                 <div class="hero-media">
-                    <div class="photo-tile" id="photo-tilt">
+                    <div class="photo-tile" id="tilt-card">
                         <img src="./portrait/img3.JPEG" alt="Ali Hassan">
                     </div>
                 </div>
-
             </div>
             <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
                 <path d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"></path>
@@ -70,7 +54,6 @@ Open index.html in a browser. Small inline script used for lightweight interacti
             </div>
 
             <div class="projects">
-                <!-- Project card 1 -->
                 <article class="project" tabindex="0">
                     <div class="project-media" aria-hidden="true">
                         <div class="thumb"></div>
@@ -82,7 +65,6 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                     </div>
                 </article>
 
-                <!-- Project card 2 -->
                 <article class="project" tabindex="0">
                     <div class="project-media">
                         <div class="thumb"></div>
@@ -94,7 +76,6 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                     </div>
                 </article>
 
-                <!-- Project card 3 -->
                 <article class="project" tabindex="0">
                     <div class="project-media">
                         <div class="thumb"></div>
@@ -106,20 +87,14 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                     </div>
                 </article>
             </div>
-           
-
-
+            
+            <button id="add-project" class="add-project-btn">+ Add Project</button>
         </section>
-
-
 
         <section id="about" class="about section-bleed">
             <div class="about-inner">
                 <h2>About me</h2>
-                <p>I am a Computer Science student specializing in designing intuitive interfaces that combine
-                    simplicity with engaging motion. I focus on creating scalable design systems, implementing
-                    accessible animations, and delivering high-performance front-end solutions.
-                </p>
+                <p>I am a Computer Science student specializing in designing intuitive interfaces that combine simplicity with engaging motion. I focus on creating scalable design systems, implementing accessible animations, and delivering high-performance front-end solutions.</p>
                 <ul class="skills">
                     <li>UI/Frontend (React, HTML, CSS)</li>
                     <li>Motion & Micro-interactions</li>
@@ -133,41 +108,14 @@ Open index.html in a browser. Small inline script used for lightweight interacti
                 <h2>Let's build something</h2>
                 <p>Open for freelance & collaboration.</p>
 
-                <!-- Contact Form -->
                 <form id="contact-form" class="contact-form">
-                    <input type="email" name="user_email" placeholder="your@email.com" required aria-label="Your email">
-                    <textarea name="message" placeholder="Tell me about your project" rows="4"
-                        aria-label="Message"></textarea>
+                    <input type="text" id="name" name="user_name" placeholder="Your Name" required aria-label="Your name">
+                    <input type="email" id="email" name="user_email" placeholder="your@email.com" required aria-label="Your email">
+                    <textarea id="message" name="message" placeholder="Tell me about your project" rows="4" required aria-label="Message"></textarea>
                     <button class="btn" type="submit">Send message</button>
                 </form>
             </div>
         </section>
-
-        <!-- Load EmailJS once -->
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-        <script>
-            // Initialize EmailJS correctly
-            emailjs.init("ckGHE3HIpSb0BVmmv"); 
-        </script>
-
-        <script>
-            // Form submit handler
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                emailjs.sendForm("service_il9baxo", "template_r6yaqgc", this)
-                    .then(function () {
-                        alert('Message sent successfully!');
-                        document.getElementById('contact-form').reset();
-                    }, function (error) {
-                        console.error('FAILED...', error);
-                        alert('Oops! Something went wrong.');
-                    });
-            });
-        </script>
-
-
     </main>
 
     <footer class="footer">
@@ -179,68 +127,6 @@ Open index.html in a browser. Small inline script used for lightweight interacti
             </nav>
         </div>
     </footer>
-
-    <script>
-        // small UX niceties: year + 3D tilt + prefers-reduced-motion fallback
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        const card = document.getElementById('tilt-card');
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (!prefersReduced && card) {
-            card.addEventListener('pointermove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                const rx = (y * -10).toFixed(2);
-                const ry = (x * 14).toFixed(2);
-                card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
-            });
-            card.addEventListener('pointerleave', () => card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)');
-        }
-
-        // Intersection observer for subtle reveal on scroll
-        if (!prefersReduced) {
-            const io = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('inview');
-                });
-            }, { threshold: 0.12 });
-            document.querySelectorAll('.project, .about-inner, .section-head').forEach(el => io.observe(el));
-        }
-    </script>
-    <script src="script.js"></script>
-
-
-    <!-- js -->
-    <script>
-        document.getElementById("add-project").addEventListener("click", () => {
-
-            const container = document.querySelector(".projects");
-
-            const card = document.createElement("article");
-            card.className = "project";
-            card.tabIndex = 0;
-
-            card.innerHTML = `
-        <div class="project-media"><div class="thumb"></div></div>
-        <div class="project-info">
-            <h3>New Project</h3>
-            <p>Added dynamically from the + button.</p>
-            <a class="project-link" href="#">View case study →</a>
-        </div>
-    `;
-
-            container.appendChild(card);
-
-            // Re-run reveal animation
-            card.classList.add('inview');
-        });
-    </script>
-    <!-- ---------- -->
-
-
 </body>
-
 
 </html>
