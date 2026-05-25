@@ -40,7 +40,7 @@ exports.handler = async (event) => {
         }
 
         // Block spammers (Currently limits to 3 messages per hour)
-        if (count > 100) {
+        if (count > 3) {
             console.log("4. Spammer blocked!");
             return { 
                 statusCode: 429, 
