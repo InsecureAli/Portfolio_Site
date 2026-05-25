@@ -72,7 +72,7 @@ if (contactForm) {
         submitBtn.disabled = true;
 
         try {
-            const response = await fetch('/.netlify/functions/send-email', {
+            const response = await fetch('https://aliportfolio-site.netlify.app/.netlify/functions/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
