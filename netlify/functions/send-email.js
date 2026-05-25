@@ -35,7 +35,7 @@ exports.handler = async (event) => {
             });
         }
 
-        if (count > 3) {
+        if (count > 100) {
             console.log("4. Spammer blocked!");
             return { statusCode: 429, headers, body: JSON.stringify({ message: "You have sent too many messages. Please try again in an hour." }) };
         }
