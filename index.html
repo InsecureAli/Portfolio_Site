@@ -1,132 +1,189 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ali Hassan — Portfolio</title>
-    <meta name="description" content="Ali Hassan — Product & UI-focused portfolio with smooth, premium animations." />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta
+      name="description"
+      content="Ali Hassan — Product & UI-focused portfolio with smooth, premium animations."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <script src="index.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="nav">
-        <div class="nav-inner">
-            <a class="brand" href="#">AliH.</a>
-            <nav>
-                <a href="./work.html">Work</a>
-                <a href="./aboutme.html">About</a>
-                <a href="#contact" class="cta">Contact</a>
-            </nav>
-        </div>
+      <div class="nav-inner">
+        <a class="brand" href="#">AliH.</a>
+        <nav>
+          <a href="./work.html">Work</a>
+          <a href="./aboutme.html">About</a>
+          <a href="#contact" class="cta">Contact</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section class="hero" id="home" aria-label="Introduction">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <h1>Bringing ideas to life through modern full-stack development <span class="accent">alive</span>.</h1>
-                    <p class="lead">I'm Ali Hassan — a Full-stack developer building smooth, scalable web apps from front to back.</p>
-                    <p class="hero-links">
-                        <a class="btn" href="./work.html">See my work</a>
-                        <a class="link" href="./aboutme.html">More about me</a>
-                    </p>
-                </div>
+      <section class="hero" id="home" aria-label="Introduction">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h1>
+              Bringing ideas to life through modern full-stack development
+              <span class="accent">alive</span>.
+            </h1>
+            <p class="lead">
+              I'm Ali Hassan — a Full-stack developer building smooth, scalable
+              web apps from front to back.
+            </p>
+            <p class="hero-links">
+              <a class="btn" href="./work.html">See my work</a>
+              <a class="link" href="./aboutme.html">More about me</a>
+            </p>
+          </div>
 
-                <div class="hero-media">
-                    <div class="photo-tile" id="tilt-card">
-                        <img src="./portrait/img3.JPEG" alt="Ali Hassan">
-                    </div>
-                </div>
+          <div class="hero-media">
+            <div class="photo-tile" id="tilt-card">
+              <img src="./portrait/img3.JPEG" alt="Ali Hassan" />
             </div>
-            <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"></path>
-            </svg>
-        </section>
+          </div>
+        </div>
+        <svg
+          class="hero-wave"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"></path>
+        </svg>
+      </section>
 
-        <section id="work" class="section-grid">
-            <div class="section-head">
-                <h2>Selected Work</h2>
-                <p>Case studies focused on motion, interaction and refined UI systems.</p>
+      <section id="work" class="section-grid">
+        <div class="section-head">
+          <h2>Selected Work</h2>
+          <p>
+            Case studies focused on motion, interaction and refined UI systems.
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project" tabindex="0">
+            <div class="project-media" aria-hidden="true">
+              <div class="thumb"></div>
             </div>
-
-            <div class="projects">
-                <article class="project" tabindex="0">
-                    <div class="project-media" aria-hidden="true">
-                        <div class="thumb"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Product Analytics Dashboard</h3>
-                        <p>Dashboard UI with micro-interactions and layered animations for fast comprehension.</p>
-                        <a class="project-link" href="#">View case study →</a>
-                    </div>
-                </article>
-
-                <article class="project" tabindex="0">
-                    <div class="project-media">
-                        <div class="thumb"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Mobile Shopping Experience</h3>
-                        <p>Motion-led onboarding that feels tactile and intuitive across gestures.</p>
-                        <a class="project-link" href="#">View case study →</a>
-                    </div>
-                </article>
-
-                <article class="project" tabindex="0">
-                    <div class="project-media">
-                        <div class="thumb"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Creative Studio Site</h3>
-                        <p>Bold photography with subtle scroll-driven parallax reveal animations.</p>
-                        <a class="project-link" href="#">View case study →</a>
-                    </div>
-                </article>
+            <div class="project-info">
+              <h3>CampusBite</h3>
+              <p>
+                Secure multi-role food ordering platform with real-time order
+                lifecycle management and admin-controlled vendor governance
+                built on the MERN stack.
+              </p>
+              <a class="project-link" href="./subpages/campus mess/campusfoodhtml.html">View case study →</a>
             </div>
-            
-            <button id="add-project" class="add-project-btn">+ Add Project</button>
-        </section>
+          </article>
 
-        <section id="about" class="about section-bleed">
-            <div class="about-inner">
-                <h2>About me</h2>
-                <p>I am a Computer Science student specializing in designing intuitive interfaces that combine simplicity with engaging motion. I focus on creating scalable design systems, implementing accessible animations, and delivering high-performance front-end solutions.</p>
-                <ul class="skills">
-                    <li>UI/Frontend (React, HTML, CSS)</li>
-                    <li>Motion & Micro-interactions</li>
-                    <li>Design Systems</li>
-                </ul>
+          <article class="project" tabindex="0">
+            <div class="project-media">
+              <div class="thumb"></div>
             </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="contact-inner">
-                <h2>Let's build something</h2>
-                <p>Open for freelance & collaboration.</p>
-
-                <form id="contact-form" class="contact-form">
-                    <input type="text" id="name" name="user_name" placeholder="Your Name" required aria-label="Your name">
-                    <input type="email" id="email" name="user_email" placeholder="your@email.com" required aria-label="Your email">
-                    <textarea id="message" name="message" placeholder="Tell me about your project" rows="4" required aria-label="Message"></textarea>
-                    <button class="btn" type="submit">Send message</button>
-                </form>
+            <div class="project-info">
+              <h3>Mobile Shopping Experience</h3>
+              <p>
+                Motion-led onboarding that feels tactile and intuitive across
+                gestures.
+              </p>
+              <a class="project-link" href="#">View case study →</a>
             </div>
-        </section>
+          </article>
+
+          <article class="project" tabindex="0">
+            <div class="project-media">
+              <div class="thumb"></div>
+            </div>
+            <div class="project-info">
+              <h3>Creative Studio Site</h3>
+              <p>
+                Bold photography with subtle scroll-driven parallax reveal
+                animations.
+              </p>
+              <a class="project-link" href="#">View case study →</a>
+            </div>
+          </article>
+        </div>
+
+        <button id="add-project" class="add-project-btn">+ Add Project</button>
+      </section>
+
+      <section id="about" class="about section-bleed">
+        <div class="about-inner">
+          <h2>About me</h2>
+          <p>
+            I am a Computer Science student specializing in designing intuitive
+            interfaces that combine simplicity with engaging motion. I focus on
+            creating scalable design systems, implementing accessible
+            animations, and delivering high-performance front-end solutions.
+          </p>
+          <ul class="skills">
+            <li>UI/Frontend (React, HTML, CSS)</li>
+            <li>Motion & Micro-interactions</li>
+            <li>Design Systems</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="contact-inner">
+          <h2>Let's build something</h2>
+          <p>Open for freelance & collaboration.</p>
+
+          <form id="contact-form" class="contact-form">
+            <input
+              type="text"
+              id="name"
+              name="user_name"
+              placeholder="Your Name"
+              required
+              aria-label="Your name"
+            />
+            <input
+              type="email"
+              id="email"
+              name="user_email"
+              placeholder="your@email.com"
+              required
+              aria-label="Your email"
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell me about your project"
+              rows="4"
+              required
+              aria-label="Message"
+            ></textarea>
+            <button class="btn" type="submit">Send message</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="foot-inner">
-            <p>© <span id="year"></span> Ali Hassan — Crafted with care.</p>
-            <nav>
-                <a target="_blank" href="https://www.linkedin.com/in/ali-hassan-b3a41b320">LinkedIn</a>
-                <a target="_blank" href="https://github.com/InsecureAli">GitHub</a>
-            </nav>
-        </div>
+      <div class="foot-inner">
+        <p>© <span id="year"></span> Ali Hassan — Crafted with care.</p>
+        <nav>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/ali-hassan-b3a41b320"
+            >LinkedIn</a
+          >
+          <a target="_blank" href="https://github.com/InsecureAli">GitHub</a>
+        </nav>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
